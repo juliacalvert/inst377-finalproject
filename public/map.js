@@ -43,6 +43,8 @@ function createMap() {
         attribution: '© OpenStreetMap'
     }).addTo(map);
 
+    const markers = L.markerClusterGroup();
+
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -54,31 +56,31 @@ function createMap() {
                 if (criminal.field_offices && criminal.field_offices.length > 0) {
                     const office = criminal.field_offices[0].toLowerCase();
                     coords = fieldOfficeLocations[office];
-                } 
+                }
 
-                else if (criminal.details) {
+                if (!coords && criminal.details) {
                     const stateMatch = criminal.details.match(/\b(?:California|Illinois|Louisiana|Arizona|New York|Florida|Texas|Georgia|Massachusetts|Washington|Indiana|Missouri|Pennsylvania)\b/gi);
                     
                     if (stateMatch) {
-                        console.log("Matched state:", stateMatch[0], "Title:", criminal.title);
                         const state = stateMatch[0].toLowerCase().trim();
                         const office = stateToOffice[state];
                         coords = fieldOfficeLocations[office];
                     }
                 }
-                console.log(criminal.title, criminal.field_offices, coords);
 
                 if (coords) {
-                    L.marker(coords)
-                        .addTo(map)
+                    const marker = L.marker(coords)
                         .bindPopup(`
                             <strong>${criminal.title}</strong><br>
-                            ${criminal.description }<br>
+                            ${criminal.description || 'No description available'}<br>
                             <a href="${criminal.url}" target="_blank">More Info</a>
                         `);
                     
+                    markers.addLayer(marker);
                 }
             });
+
+            map.addLayer(markers);
         })
 }
 
