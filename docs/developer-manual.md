@@ -48,8 +48,7 @@
 #	"tip": "driving a uhaul",
 #	"date": "2025-05-03"
 # }
-# For each new record, add the name, tip (information you have about the suspect), and the date the tip was recorded
-# When you click send the preview says null, but when you do the GET again, it will show up
+# For each new record, add the name, tip (information you have about the suspect), and the date the tip was recorded. When you click send, the preview says null, but when you do the GET again, it will show up.
 
 
 # Known Bugs/Roadmap for the Future
