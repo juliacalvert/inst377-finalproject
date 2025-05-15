@@ -24,6 +24,7 @@
 
 # In the terminal you need to do:
 # npm install
+# npm insteall nodemon
 # npm install @supabase/supabase-js
 # npm install express
 # npm install cors
