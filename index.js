@@ -9,18 +9,21 @@ const port = 4000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(__dirname + '/public'));
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+app.get('/', (req, res) => {
+  res.sendFile('public/notify.html', { root: __dirname });
+});
 
 app.get("/api/suspectInfo", async (req, res) => {
   const { data, error } = await supabase.from("suspectInfo").select();
   if (error) return res.status(500).send(error);
   res.json(data);
 });
-
 
 app.post("/api/suspectInfo", async (req, res) => {
   console.log("Adding suspect:", req.body);
