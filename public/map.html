@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Map</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        <script src="map.js" defer></script>
+        <script src="project.html" defer></script>
+        <link rel="stylesheet" href="external.css">
+        <style>
+            #map { height: 600px;
+                width: 1200px;
+                margin-left: 150px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 id="center">Map of the Crimes</h1>
+        <nav id="nav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="project.html">Roulette</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="notify.html">Notify Us</a></li>
+            </ul>
+        </nav>
+        <h2>Here is a Map that Displays Where the First 10 Most Wanted on the list Were Last Located</h2>
+        <p>Click on any popup to see who it was and more information. Each popup also contains a link to their page on the FBI site.</p>
+        <div id="map"></div>
+        <div id="info"></div>
+    </body>
+</html>
