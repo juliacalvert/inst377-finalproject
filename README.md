@@ -10,7 +10,4 @@
 
 
 
-
-# Developer Manual
-
 # [Developer Manual](./docs/developer-manual.md)
