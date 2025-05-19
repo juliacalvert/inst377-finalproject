@@ -6,7 +6,7 @@
 
 # Description of Target Browsers: The target browser for this project would be something that could support JavaScript, HTML, APIs, cors, and more. Google Chrome would be best since that is what I was using and testing on for this project.
 
-# Developer manual down below
+# Developer manual link down below
 
 
 
