@@ -54,3 +54,7 @@
 # Known Bugs/Roadmap for the Future
 
 # There are not really any "known" bugs, but the program should check if the name of the suspect entered is actually in the database and not a random name like I have been testing it with. I plan on adding this in the future as well as more validations to only allow things that are necessary and helpful so it doesn't take up time if the FBI is looking through the information. I'd also like to add more filters like terrorists, kidnappings, murders, and stuff like that to keep it neater and to be able to display more information as it is too much if it's all together. There also wasn't a way to get the "top 10 most wanted" dynamically so I ended up doing the first 10 on thier list. Some of them were the same but I'd like to get the top 10 most wanted which I'd probably have to do some web scraping for that.
+
+
+# Vercel link
+# https://inst377-finalproject-eta.vercel.app/
